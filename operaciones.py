@@ -19,3 +19,4 @@ if __name__ == "__main__":
     print(restar(5, 3))
     print(multiplicar(5, 3))
     print(dividir(5, 3))
+    print(dividir(8, 0))
