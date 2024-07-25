@@ -24,7 +24,7 @@ class TestOperaciones(unittest.TestCase):
         self.assertEqual(dividir(4, 2), 2)
         self.assertEqual(dividir(9, 3), 3)
         with self.assertRaises(ValueError):
-            dividir(5, 0)
+            dividir(6, 0)
 
 if __name__ == '__main__':
     unittest.main()
