@@ -12,7 +12,7 @@ def multiplicar(a, b):
 def dividir(a, b):
     if b == 0:
         raise ValueError("El divisor no puede ser cero.")
-    return a + b
+    return a / b
 
 if __name__ == "__main__":
     print(sumar(5, 3))
