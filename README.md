@@ -16,7 +16,7 @@ Para ejecutar el proyecto:
 
 1. Instala Python (si no lo tienes instalado) en tu máquina.
 2. Ejecuta la calculadora con el siguiente comando: 
-```bash
+```
 $ python calculadora_basica.py
 ============================================
             CALCULADORA BÁSICA
@@ -62,8 +62,8 @@ Elige una operación (1-5): 5
 ```
 
 3. Ejecuta las pruebas unitarias con el siguiente comando desde la raíz del repositorio:
-```bash
-   $ python -m unittest test_operaciones.py
+```
+$ python -m unittest test_operaciones.py
 --- Probando operación: sumar ---
   -> Probando sumar con argumentos (10, 4), esperando 14...
   -> Probando sumar con argumentos (-5, 7), esperando 2...
