@@ -23,8 +23,8 @@ $ python calculadora_basica.py
 ============================================
 
 Universidad Internacional de La Rioja
-Adaptación al Grado de Informática
 
+Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del software
 Práctica: Diseño de pruebas de software
 
