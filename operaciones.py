@@ -1,7 +1,7 @@
 """
 operaciones.py
 
-Universidad: Universidad Internacional de La Rioja
+Universidad Internacional de La Rioja
 Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
@@ -36,6 +36,7 @@ Histórico de Versiones:
     - 2024-01-13: Fork de versión inicial con funcionalidad básica.
     - 2024-01-14: Revisión de formato y separación en módulo operaciones.
 """
+
 
 def sumar(a, b):
     """

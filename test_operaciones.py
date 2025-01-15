@@ -1,13 +1,18 @@
 """
 test_operaciones.py
 
+Universidad Internacional de La Rioja
+Curso: Adaptación al Grado de Informática
+Asignatura: Procesos en Ingeniería del Software
+Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
+
 Descripción:
     Este módulo contiene la clase de pruebas unitarias para validar las funciones definidas
     en el módulo 'operaciones.py'. Utiliza la librería estándar `unittest` para garantizar 
     que las operaciones matemáticas básicas (suma, resta, multiplicación, división) funcionan 
     correctamente bajo diferentes escenarios, incluidos casos límite.
 
-Clase:
+Clases:
     - TestOperaciones(unittest.TestCase): Define pruebas unitarias para cada operación 
         matemática, comprobando casos normales, casos límite y manejo de errores.
 

@@ -2,7 +2,7 @@
 """
 calculadora.py
 
-Universidad: Universidad Internacional de La Rioja
+Universidad Internacional de La Rioja
 Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
