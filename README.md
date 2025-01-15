@@ -21,10 +21,14 @@ $ python calculadora_basica.py
 ============================================
             CALCULADORA BÁSICA
 ============================================
+
 Universidad Internacional de La Rioja
+
 Asignatura: Adaptación al Grado de Informática
 Práctica: Diseño de pruebas de software
+
 --------------------------------------------
+
 Autores:
     Cristina Cacho Martín
     Patricia Casas Vázquez
@@ -35,10 +39,11 @@ Descripción:
     Realiza operaciones matemáticas básicas
     como suma, resta, multiplicación y
     división.
+
 ============================================
 
-
 Calculadora Básica
+
 1. Sumar
 2. Restar
 3. Multiplicar
@@ -46,11 +51,14 @@ Calculadora Básica
 5. Salir
 
 Elige una operación (1-5): 3
+
 Introduce el primer número: 2
 Introduce el segundo número: 3
+
 La multiplicación de 2.0 y 3.0 es: 6.0
 
 Calculadora Básica
+
 1. Sumar
 2. Restar
 3. Multiplicar
@@ -58,6 +66,7 @@ Calculadora Básica
 5. Salir
 
 Elige una operación (1-5): 5
+
 ¡Hasta luego!
 ```
 

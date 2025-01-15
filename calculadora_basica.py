@@ -61,10 +61,14 @@ def mostrar_banner():
 ============================================
             CALCULADORA BÁSICA
 ============================================
+
 Universidad Internacional de La Rioja
+
 Asignatura: Adaptación al Grado de Informática
 Práctica: Diseño de pruebas de software
+
 --------------------------------------------
+
 Autores:
     Cristina Cacho Martín
     Patricia Casas Vázquez
@@ -75,6 +79,7 @@ Descripción:
     Realiza operaciones matemáticas básicas
     como suma, resta, multiplicación y
     división.
+
 ============================================
 """
     print(banner)
@@ -86,7 +91,7 @@ if __name__ == "__main__":
 
     # Repetimos hasta elegir la opción 5
     while True: 
-        print("\nCalculadora Básica")
+        print("\nCalculadora Básica\n")
         print("1. Sumar")
         print("2. Restar")
         print("3. Multiplicar")
@@ -94,10 +99,11 @@ if __name__ == "__main__":
         print("5. Salir\n")
         
         opcion = input("Elige una operación (1-5): ")
+        print()
         
         if opcion == "5":
             # Con esta opción salimos del programa calculadora
-            print("¡Hasta luego!")
+            print("¡Hasta luego!\n")
             break
 
         # Según el número seleccionado ejecutamos una opción
@@ -106,7 +112,9 @@ if __name__ == "__main__":
                 # Convertimos a float porque la división puede no dar un número entero
                 num1 = float(input("Introduce el primer número: "))
                 num2 = float(input("Introduce el segundo número: "))
-                
+
+                print()
+
                 if opcion == "1":
                     print(f"La suma de {num1} y {num2} es: {sumar(num1, num2)}")
                 elif opcion == "2":
