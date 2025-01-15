@@ -43,7 +43,7 @@ Descripción:
 
 ============================================
 
-Calculadora Básica
+> Calculadora Básica
 
 1. Sumar
 2. Restar
@@ -58,7 +58,8 @@ Introduce el segundo número: 3
 
 La multiplicación de 2.0 y 3.0 es: 6.0
 
-Calculadora Básica
+
+> Calculadora Básica
 
 1. Sumar
 2. Restar
