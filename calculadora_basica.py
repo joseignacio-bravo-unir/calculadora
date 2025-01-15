@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
     # Repetimos hasta elegir la opción 5
     while True: 
-        print("\nCalculadora Básica\n")
+        print("\n> Calculadora Básica\n")
         print("1. Sumar")
         print("2. Restar")
         print("3. Multiplicar")
@@ -131,3 +131,7 @@ if __name__ == "__main__":
                 print("Por favor, introduce valores numéricos válidos.")
         else:
             print("Opción no válida. Por favor, elige una opción del 1 al 5.")
+
+        # Siguiente
+        print()
+
