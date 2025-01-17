@@ -74,7 +74,7 @@ class TestOperaciones(unittest.TestCase):
                 "tests": [  
                     {"args": (10, 4), "expected": 14}, # Caso: argumentos enteros
                     {"args": (-5, 7.5), "expected": 2.5}, # Caso: argumento decimal
-                    {"args": (-9, -4), "expected": -12}, # Caso: argumento negativo
+                    {"args": (-9, -3), "expected": -12}, # Caso: argumento negativo
                 ],
 
                 # Casos que generan errores
