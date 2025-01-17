@@ -69,7 +69,8 @@ def mostrar_banner():
 
 Universidad Internacional de La Rioja
 
-Asignatura: Adaptación al Grado de Informática
+Curso: Adaptación al Grado de Informática
+Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software
 
 --------------------------------------------
