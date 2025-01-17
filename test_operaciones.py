@@ -2,6 +2,7 @@
 test_operaciones.py
 
 Universidad Internacional de La Rioja
+
 Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
@@ -38,6 +39,8 @@ Autores:
 Histórico de Versiones:
     - 2024-01-13: Fork de versión inicial con pruebas básicas.
     - 2024-01-14: Revisión de formato, añadido feedback en tests.
+    - 2024-01-16: Pruebas control de errores para verificar enteros 
+    - 2024-01-17: Añadido control de errores para floats y desbordamiento 
 """
 
 import unittest  # Importa el módulo unittest para realizar pruebas unitarias
@@ -69,19 +72,33 @@ class TestOperaciones(unittest.TestCase):
             "sumar": {
                 "func": sumar,  # Asocia la función sumar
                 "tests": [  
-                    {"args": (10, 4), "expected": 14},  
-                    {"args": (-5, 7), "expected": 2},  
-                    {"args": (-9, -3), "expected": -12},  
+                    {"args": (10, 4), "expected": 14}, # Caso: argumentos enteros
+                    {"args": (-5, 7.5), "expected": 2.5}, # Caso: argumento decimal
+                    {"args": (-9, -3), "expected": -12}, # Caso: argumento negativo
                 ],
+
+                # Casos que generan errores
+                "errors": [
+                    {"args": ('a', 3), "exception": TypeError}, # Caso: argumento no válido: carácter
+                    {"args": (1, None), "exception": TypeError}, # Caso: argumento no válido: nulo
+                    {"args": (1.8e308, 3), "exception": OverflowError}, # Caso: argumento no válido: límite
+                 ],
             },
 
             # Pruebas para la función restar
             "restar": {  
                 "func": restar,  # Asocia la función restar
                 "tests": [  
-                    {"args": (7, 4), "expected": 3},  
-                    {"args": (-12, 4), "expected": -16},  
-                    {"args": (-5, -5), "expected": 0},  
+                    {"args": (7, 4), "expected": 3}, # Caso: argumentos enteros
+                    {"args": (-12, 4.5), "expected": -16.5}, # Caso: argumento decimal
+                    {"args": (-5, -5), "expected": 0}, # Caso: argumento negativo
+                ],
+
+                # Casos que generan errores
+                "errors": [
+                    {"args": ('a', 2), "exception": TypeError}, # Caso: argumento no válido: carácter
+                    {"args": (None, 8), "exception": TypeError}, # Caso: argumento no válido: nulo
+                    {"args": (1.8e308, 3), "exception": OverflowError}, # Caso: argumento no válido: límite
                 ],
             },
 
@@ -89,9 +106,16 @@ class TestOperaciones(unittest.TestCase):
             "multiplicar": {  
                 "func": multiplicar,  # Asocia la función multiplicar
                 "tests": [  
-                    {"args": (7, 2), "expected": 14},  
-                    {"args": (-3, 3), "expected": -9},  
-                    {"args": (-5, -4), "expected": 20},  
+                    {"args": (7, 2), "expected": 14}, # Caso: argumentos enteros
+                    {"args": (-3, 3.5), "expected": -10.5}, # Caso: argumento decimal
+                    {"args": (-5, -4), "expected": 20}, # Caso: argumento negativo
+                ],
+
+                # Casos que generan errores 
+                "errors": [
+                    {"args": (2, 'a'), "exception": TypeError}, # Caso: argumento no válido: carácter
+                    {"args": (None, 10.20), "exception": TypeError}, # Caso: argumento no válido: nulo
+                    {"args": (1.8e308, 3), "exception": OverflowError}, # Caso: argumento no válido: límite
                 ],
             },
 
@@ -99,13 +123,16 @@ class TestOperaciones(unittest.TestCase):
             "dividir": {  
                 "func": dividir,  # Asocia la función dividir
                 "tests": [  
-                    {"args": (12, 3), "expected": 4},  # Caso 1: división exacta
-                    {"args": (15, 5), "expected": 3},  # Caso 2: división exacta
+                    {"args": (12, 3), "expected": 4}, # Caso: division exacta
+                    {"args": (10, 3), "expected": 10/3}, # Caso: division decimal
+                    {"args": (0, 3), "expected": 0}, # Caso: cero
                 ],
 
                 # Casos que generan errores (como división por cero)
                 "errors": [  
-                    {"args": (8, 0), "exception": ValueError},  # Caso: división por cero
+                    {"args": (8, 0), "exception": ValueError}, # Caso: división por cero
+                    {"args": ('a', 3), "exception": TypeError}, # Caso: argumento no válido: carácter
+                    {"args": (1.8e308, 3), "exception": OverflowError}, # Caso: argumento no válido: límite
                 ],
             },
         }

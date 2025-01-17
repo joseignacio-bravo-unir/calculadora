@@ -1,8 +1,8 @@
-
 """
 calculadora.py
 
-Universidad Internacional de La Rioja
+** Universidad Internacional de La Rioja **
+
 Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
@@ -24,13 +24,17 @@ Uso:
 Ejemplo:
     Calculadora Básica
     Seleccione una operación:
+
     1. Sumar
     2. Restar
     3. Multiplicar
     4. Dividir
+
     Opción: 1
+
     Introduzca el primer número: 5
     Introduzca el segundo número: 3
+
     Resultado: 8
 
 Requisitos:
@@ -48,6 +52,7 @@ Histórico de Versiones:
     - 2024-01-13: Mejoras en la interfaz de usuario y manejo de excepciones.
     - 2024-01-13: Añadida integración con pruebas unitarias automáticas.
     - 2024-01-14: Revisión de formato y separación en módulo operaciones.
+    - 2024-01-17: Cambios de formato
 """
 
 from operaciones import sumar, restar, multiplicar, dividir
@@ -91,7 +96,7 @@ if __name__ == "__main__":
 
     # Repetimos hasta elegir la opción 5
     while True: 
-        print("\n> Calculadora Básica\n")
+        print(">  Calculadora Básica\n")
         print("1. Sumar")
         print("2. Restar")
         print("3. Multiplicar")
@@ -99,6 +104,8 @@ if __name__ == "__main__":
         print("5. Salir\n")
         
         opcion = input("Elige una operación (1-5): ")
+
+        # salto de linea
         print()
         
         if opcion == "5":
@@ -109,29 +116,30 @@ if __name__ == "__main__":
         # Según el número seleccionado ejecutamos una opción
         if opcion in ["1", "2", "3", "4"]:
             try:
-                # Convertimos a float porque la división puede no dar un número entero
-                num1 = float(input("Introduce el primer número: "))
-                num2 = float(input("Introduce el segundo número: "))
+                a = float(input("Introduce el primer número: "))
+                b = float(input("Introduce el segundo número: "))
 
+                # salto de linea
                 print()
 
                 if opcion == "1":
-                    print(f"La suma de {num1} y {num2} es: {sumar(num1, num2)}")
+                    print(f"La suma de {a} y {b} es: {sumar(a, b)}")
                 elif opcion == "2":
-                    print(f"La resta de {num1} y {num2} es: {restar(num1, num2)}")
+                    print(f"La resta de {a} y {b} es: {restar(a, b)}")
                 elif opcion == "3":
-                    print(f"La multiplicación de {num1} y {num2} es: {multiplicar(num1, num2)}")
+                    print(f"La multiplicación de {a} y {b} es: {multiplicar(a, b)}")
                 elif opcion == "4":
-                    try:
-                        print(f"La división de {num1} entre {num2} es: {dividir(num1, num2)}")
-                    except ValueError as e:
-                        # Muestra el mensaje del error lanzado con raise
-                        print(e)
+                    print(f"La división de {a} entre {b} es: {dividir(a, b)}")
+
             except ValueError:
                 print("Por favor, introduce valores numéricos válidos.")
+
+            except Exception as e:
+                print(f"Error: {e}")
+                
         else:
             print("Opción no válida. Por favor, elige una opción del 1 al 5.")
 
-        # Siguiente
+        # salto de linea, siguiente
         print()
 

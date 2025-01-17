@@ -2,6 +2,7 @@
 operaciones.py
 
 Universidad Internacional de La Rioja
+
 Curso: Adaptación al Grado de Informática
 Asignatura: Procesos en Ingeniería del Software
 Práctica: Diseño de pruebas de software - Calculadora con pruebas unitarias
@@ -35,7 +36,18 @@ Autores:
 Histórico de Versiones:
     - 2024-01-13: Fork de versión inicial con funcionalidad básica.
     - 2024-01-14: Revisión de formato y separación en módulo operaciones.
+    - 2024-01-16: Añadido verificación solo enteros.
+    - 2024-01-17: Añadido verificación para float.
 """
+
+# para verificar desbordamientos
+from math import isinf
+
+
+def verifica_overflow(n):
+    """Función auxiliar para verificar si hay posible desbordamiento."""
+
+    return isinstance(n, float) and isinf(n)
 
 
 def sumar(a, b):
@@ -46,11 +58,11 @@ def sumar(a, b):
     realizar operaciones matemáticas básicas.
 
     Args:
-        a (float): El primer número a sumar.
-        b (float): El segundo número a sumar.
+        a (int | float): El primer número a sumar.
+        b (int | float): El segundo número a sumar.
 
     Returns:
-        float: La suma de los dos números proporcionados.
+        int | float: La suma de los dos números proporcionados.
 
     Ejemplo:
         >>> sumar(2, 3)
@@ -58,6 +70,14 @@ def sumar(a, b):
         >>> sumar(-1, 4.5)
         3.5
     """
+
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        # Lanzamos el error si uno de los dos argumentos no es un número
+        raise TypeError("Los argumentos deben ser números.")
+    
+    if verifica_overflow(a) or verifica_overflow(b):
+        # Lanzamos el error si uno de los dos argumentos es flotante y hay desbordamiento
+        raise OverflowError("Valores demasiado grandes")
 
     return a + b
 
@@ -70,11 +90,11 @@ def restar(a, b):
     el segundo número al primero.
 
     Args:
-        a (float): El minuendo, es decir, el número al que se le resta.
-        b (float): El sustraendo, es decir, el número que se resta.
+        a (int / float): El minuendo, es decir, el número al que se le resta.
+        b (int / float): El sustraendo, es decir, el número que se resta.
 
     Returns:
-        float: La diferencia resultante de la operación.
+        int | float: La diferencia resultante de la operación.
 
     Ejemplo:
         >>> restar(10, 3)
@@ -85,6 +105,14 @@ def restar(a, b):
         -4
     """
 
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        # Lanzamos el error si uno de los dos argumentos no es un número
+        raise TypeError("Los argumentos deben ser números.")
+
+    if verifica_overflow(a) or verifica_overflow(b):
+        # Lanzamos el error si uno de los dos argumentos es flotante y hay desbordamiento
+        raise OverflowError("Valores demasiado grandes")
+    
     return a - b
 
 
@@ -96,11 +124,11 @@ def multiplicar(a, b):
     realizar operaciones matemáticas básicas.
 
     Args:
-        a (float): El primer número a multiplicar.
-        b (float): El segundo número a multiplicar.
+        a (int | float): El primer número a multiplicar.
+        b (int | float): El segundo número a multiplicar.
 
     Returns:
-        float: El producto de los dos números proporcionados.
+        int | float: El producto de los dos números proporcionados.
 
     Ejemplo:
         >>> multiplicar(2, 3)
@@ -111,6 +139,14 @@ def multiplicar(a, b):
         0
     """
 
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        # Lanzamos el error si uno de los dos argumentos no es un número
+        raise TypeError("Los argumentos deben ser números.")
+
+    if verifica_overflow(a) or verifica_overflow(b):
+        # Lanzamos el error si uno de los dos argumentos es flotante y hay desbordamiento
+        raise OverflowError("Valores demasiado grandes")
+    
     return a * b
 
 
@@ -123,8 +159,8 @@ def dividir(a, b):
     para evitar errores de ejecución.
 
     Args:
-        a (float): El dividendo, es decir, el número que se divide.
-        b (float): El divisor, es decir, el número por el que se divide.
+        a (int | float): El dividendo, es decir, el número que se divide.
+        b (int | float): El divisor, es decir, el número por el que se divide.
 
     Returns:
         float: El cociente resultante de la operación.
@@ -141,6 +177,14 @@ def dividir(a, b):
         ZeroDivisionError: division by zero
     """
 
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        # Lanzamos el error si uno de los dos argumentos no es un número
+        raise TypeError("Los argumentos deben ser números.")
+
+    if verifica_overflow(a) or verifica_overflow(b):
+        # Lanzamos el error si uno de los dos argumentos es flotante y hay desbordamiento
+        raise OverflowError("Valores demasiado grandes")
+    
     if b == 0:
         # Lanzamos el error al intentar dividir por 0
         raise ValueError("El divisor no puede ser cero.") 
